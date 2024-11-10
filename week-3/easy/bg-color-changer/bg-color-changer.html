@@ -1,0 +1,95 @@
+<head>
+    <title>
+        Background Color Changer
+    </title>
+    <style>
+        .container{
+            background-color:whitesmoke;
+            margin: 0 auto;
+            height:30px;
+            padding: 10px;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0px 2px 4px black;
+            }
+        
+        .color-button{
+            padding: 5px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .color-button button{
+            width: 75px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .adder{
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .bottom{
+            display: grid;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class = "bottom">
+    <div class = "container">
+        <div class = "color-button">
+            <button class = "red-button" style="background-color: red;" onclick="changecolour('red')">Red</button>
+            <button class = "yellow-button" style="background-color: yellow;" onclick="changecolour('yellow')">Yellow</button>
+            <button class = "black-button" style="background-color: black; color: white;" onclick="changecolour('black')">Black</button>
+            <button class = "purple-button" style="background-color: purple;" onclick="changecolour('purple')">Purple</button>
+            <button class = "green-button" style="background-color: green;" onclick="changecolour('green')">Green</button>
+            <button class = "blue-button" style="background-color: blue;" onclick="changecolour('blue')">Blue</button>
+            <button class = "default-button" style="background-color: orange;" onclick="changecolour('orange')">Default</button>
+        </div>
+    </div>
+    <div class = "adder">
+        <input type="text" id="customColorInput" placeholder="Enter a color name or hex code" />
+        <button style="cursor: pointer;" onclick="addcolor()">Add Color</button>
+    </div>
+</div>
+
+</body>
+
+<script>
+    // Function to change background color
+    function changecolour(color) {
+        const body = document.querySelector('body');
+        body.style.backgroundColor = color;
+    }
+
+    // Function to add a new color button
+    function addcolor() {
+        const colorInput = document.getElementById('customColorInput').value.trim();
+        if (colorInput) {
+            const colorPanel = document.querySelector('.color-button');
+            const newButton = document.createElement('button');
+            
+            // Set the button's background to the custom color
+            newButton.style.backgroundColor = colorInput;
+            newButton.textContent = colorInput;
+            newButton.classList.add('color-btn');
+            newButton.style.borderRadius = '15px';
+            newButton.style.cursor = 'pointer';
+
+            // Add event listener to change the background when clicked
+            newButton.addEventListener('click', () => changecolour(colorInput));
+
+            // Append the new button to the color panel
+            colorPanel.appendChild(newButton);
+
+            // Clear the input field
+            document.getElementById('customColorInput').value = '';
+        } else {
+            alert('Please enter a valid color name or hex code.');
+        }
+    }
+</script>

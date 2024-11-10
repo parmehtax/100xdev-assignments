@@ -4,6 +4,7 @@
     <title>Visual Studio Code Landing Page</title>
     <style>
         body {
+            /* add fonts, if arial not available, use sans-serif */
             font-family: Arial, sans-serif;
             background-color: black;
         }
@@ -17,9 +18,11 @@
         .languagePanel {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            /* pads the line from both sides */
             padding-inline: 2.5rem
         }
 
+        /* Applies to images inside the language panel class */
         .languagePanel img {
             height: 40px;
             width: auto;
@@ -28,6 +31,8 @@
         .container {
             display: grid;
             grid-template-columns: 1fr 2fr;
+            /* 0.125rem = 1 px
+                2 rem   = 32 px */
             column-gap: 2rem;
         }
 
@@ -38,16 +43,17 @@
         .verticalCenter {
             display: flex;
             justify-content: center;
-            align-items: center;
+            /* Align items in the grid , also could use "flex-direction:column;" */
+            align-items: center; 
             height: 100%;
         }
-        
     </style>
 </head>
 <body>
     <div class="container">
         <div>
             <h2>Code in any language</h2>
+            <!-- define a paragraph -->
             <p>VS Code supports almost every major programming language. Several ship in the box, like JavaScript,
                 TypeScript, CSS, and HTML, but extensions for others can be found in the VS Code Marketplace.</p>
         </div>
@@ -58,6 +64,7 @@
             </div>
             <div class="flex">
                 <img src="https://code.visualstudio.com/assets/home/language-ts.png" alt="TypeScript">
+                <!-- code is used to show a piece of computer code in html -->
                 <code class="verticalCenter">TypeScript</code>
             </div>
             <div class="flex">

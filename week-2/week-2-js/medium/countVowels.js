@@ -6,7 +6,20 @@
 */
 
 function countVowels(str) {
-    // Your code here
+    let string=str.toLowerCase();
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let count = 0;
+    for(let i=0;i<str.length;i++)
+    {
+      if (vowels.includes(string[i]))
+      {
+          count++;
+      }
+    }
+
+    return count;
 }
 
 module.exports = countVowels;
+
+console.log(countVowels('OpenAI'))

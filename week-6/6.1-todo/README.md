@@ -1,39 +1,18 @@
-# Todo Application
+# TODO
 
-Create a simple Todo application that stores tasks in in-memory storage.
-
-### Setup Instructions
-
-#### 1. Backend Setup
-
-1. Navigate to the backend folder:
-   ```bash
-   cd week-6/6.1-todo/backend
-   ```
-
-2. Install the required dependencies:
-   ```bash
-   npm install
-   ```
-
-#### 2. Frontend Setup
-
-1. Navigate to the frontend folder:
-   ```bash
-   cd week-6/6.1-todo/frontend
-   ```
-
-2. Install the required dependencies:
-   ```bash
-   npm install
-   ```
+Create a simple Todo application that store todos in a in-memory storage.
 
 
+### Before writing code in backend.
 
-### Reference UI
+ go inside `week-6/6.1-todo/backend`
+```
+npm install
+```
 
-Here’s UI design:
+### Reference UI:
 
-![Todo UI](https://utfs.io/f/A8JZzw0Laf9jp4VFakqoEuvQ9dYF0XtUT6VqmJnPbMeNLCig)
+![Image](https://utfs.io/f/3e65e2d3-a5b1-4ce8-aa07-611a54d6363a-2t1eni.png)
 
-> **Note**: Please don’t copy directly. Create a unique and user-friendly design that fits the application’s purpose.
+#### please don't copy, create a great UI.
+

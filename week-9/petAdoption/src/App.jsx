@@ -1,9 +1,11 @@
 import Header from './components/Header';
 import PetAdoptionForm from './components/PetAdoptionForm';
+import AdopterData from './components/AdopterData';
+import { useState } from 'react';
 import "./myApp.css";
 
-
 const App = () => {
+
   return (
     <div
       style={{
@@ -13,8 +15,10 @@ const App = () => {
       }}
     >
       <Header message={"Pet Adoption Form"} />
-      <PetAdoptionForm />
+      <PetAdoptionForm/>
+  
     </div>
   );
 };
+
 export default App;

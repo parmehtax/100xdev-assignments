@@ -83,7 +83,7 @@ const Timer = () => {
                 autoFocus
               />
             ) : (
-              <span className={style.timeUnit} onClick={() => handleEditField('hours')}>{hours}</span>
+              <div className={style.timeUnit} onClick={() => handleEditField('hours')}>{hours}</div>
             )}
             :
             {editState.field === 'minutes' ? (

@@ -1,0 +1,137 @@
+<html>
+<head>
+    <title>
+        Form Builder
+    </title>
+    <style>
+        body {
+            background-color: rgb(230, 230, 230);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100vw;
+            height: 50%;
+        }
+
+        .input, .preview {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .preview{
+            overflow-y: auto;
+        }
+
+        .input-content {
+            width: 600px;
+            padding: 2px;
+        }
+
+        /* Style for text input and label on separate lines */
+        .block-field {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Style for checkbox/radio input and label on the same line */
+        .inline-field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .inline-field label {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="grid-container">
+        <div class="input">
+            <h2>Form Builder</h2>
+            <h3>Select Field Type</h3>
+            <select class="input-content">
+                <option value="0">Text Input</option>
+                <option value="1">CheckBox</option>
+                <option value="2">Radio Input</option>
+            </select>
+            <br>
+            <h3>Field Label</h3>
+            <input class="input-content" type="text" id="fieldLabel" placeholder="Enter Field Label">
+            <div style="margin-top: 20px;">
+                <button class="input-content" onclick="addField()"> Add Field</button>
+            </div>
+        </div>
+
+        <div class="preview">
+            <h2>Form Preview</h2>
+            <form id="formPreview"></form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const input_types = ['text', 'checkbox', 'radio'];
+    let fieldCounter = 0; // Keeps track of unique IDs
+
+    function addField() {
+        const form = document.getElementById('formPreview');
+        const fieldType = document.querySelector('select').value;
+        const inputType = input_types[fieldType];
+        const fieldLabel = document.getElementById('fieldLabel').value;
+        const linebreak = document.createElement('br');
+
+        if (fieldLabel === "") {
+            alert("Please enter a field label");
+            return;
+        }
+
+        // Create unique ID for the input element
+        const uniqueId = `field_${fieldCounter}`;
+        fieldCounter++;
+
+        // Create label element
+        const label = document.createElement('label');
+        label.innerText = fieldLabel;
+        label.setAttribute('for', uniqueId);  // Attach label to input via 'for'
+
+        // Create input element with unique ID
+        const inputElement = document.createElement('input');
+        inputElement.type = inputType;
+        inputElement.id = uniqueId; // Set the unique ID to the input
+
+        // Create a div wrapper to control layout
+        const wrapper = document.createElement('div');
+
+        if (inputType === "text") {
+            label.innerText += ":"; // Add colon for text inputs
+            wrapper.classList.add('block-field'); // Text input in block layout (separate lines)
+            wrapper.appendChild(label);
+            wrapper.appendChild(linebreak);
+            wrapper.appendChild(inputElement);
+        } else {
+            wrapper.classList.add('inline-field'); // Inline layout for checkbox/radio
+            wrapper.appendChild(inputElement);
+            wrapper.appendChild(label);
+        }
+
+        // Append the wrapper to the form
+        form.appendChild(wrapper);
+    }
+</script>
+
+</body>
+</html>

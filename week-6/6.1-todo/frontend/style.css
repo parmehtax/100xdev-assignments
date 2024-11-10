@@ -1,42 +1,60 @@
-
-
 body {
-  /*  write here */
-  }
-    
-  .container {
-  /*  write here */
-  }
-    
-  h1 {
-  /*  write here */
-  }
-    
-  .input-container {
-  /*  write here */
-  }
-    
-  #todo-input {
-  /*  write here */
-  }
-    
-  #add-todo-btn {
-  /*  write here */
-  }
-    
-  #todo-list {
-   /*  write here */
-  }
-    
-  #todo-list li {
-  /*  write here */
-  }
-    
-  #todo-list li.completed {
-  /*  write here */
-  }
-    
-  button.delete-btn {
-  /*  write here */
-  }
-    
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: grey;
+}
